@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    
+    <title>TRANSFORMER</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+}
+
+.container-fluid.nav-div {
+    padding: 0 10px;
+}
+
+.container-fluid.nav-div ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul h1 {
+    font-size: 24px;
+}
+
+.wrapper {
+    /* position: relative; */
+    /* width: 320px; */
+    /* margin: 150px auto; */
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    perspective: 1000px;
+    /* margin-bottom: 200px; */
+}
+
+.img-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-360deg) translateZ(-300px);
+    animation: animate 25s steps(1000, end) infinite;
+}
+
+.single-img {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 10px;
+    left: 10px;
+}
+
+/* 
+.single-img img {
+    width: 300px;
+    height: 200px;
+    border: 5px solid rgb(17, 17, 17);
+} */
+
+.single-img.img-one {
+    transform: rotateY(0deg) translateZ(300px);
+}
+
+.single-img.img-two {
+    transform: rotateY(60deg) translateZ(300px);
+}
+
+.single-img.img-three {
+    transform: rotateY(120deg) translateZ(300px);
+}
+
+.single-img.img-four {
+    transform: rotateY(180deg) translateZ(300px);
+}
+
+.single-img.img-five {
+    transform: rotateY(240deg) translateZ(300px);
+}
+
+.single-img.img-six {
+    transform: rotateY(300deg) translateZ(300px);
+}
+
+/* 
+img {
+    filter: grayscale(0);
+
+} */
+
+@keyframes animate {
+    from {
+        transform: rotateY(-360deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@font-face {
+    font-family: bday;
+    src: url(bday.ttf);
+}
+
+body {
+    background-image: url('back1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    ul a {
+        font-size: 14px !important;
+    }
+
+    ul h1 {
+        font-size: 16px !important;
+    }
+
+    img#logo {
+        width: 75px;
+        height: 75px;
+    }
+}
+#carousel-container {
+    position: relative;
+    margin: 120px auto 0;
+    padding: 150px 0;
+}
+
+#carousel-container .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/images/back.jpg');
+    filter: blur(2px);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel {
+    --image-size: 350px;
+    margin: 0 auto;
+    position: relative;
+    width: var(--image-size);
+    height: calc(var(--image-size) / 1.5);
+    transform-style: preserve-3d;
+    animation: rotation 30s linear infinite;
+}
+
+.carousel span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(var(--image-size));
+}
+
+.carousel span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.carousel span:hover img {
+    transform: scale(1.2);
+}
+
+@keyframes rotation {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    #carousel-container {
+        padding: 50px 0;
+        margin-top: 92px;
+    }
+
+    .carousel {
+        --image-size: 200px;
+    }
+}
+</style>
+<body>
+
+   
+  
+
+    <div id="carousel-container">
+        <div class="background"></div>
+        <div class="carousel">
+            <span style="--i:1;"><img src="HVD CODER (1).png" alt="College Memories"></span>
+            <span style="--i:2;"><img src="5.png" alt="College Memories"></span>
+            <span style="--i:3;"><img src="4.png" alt="College Memories"></span>
+            <span style="--i:4;"><img src="3.png" alt="College Memories"></span>
+            <span style="--i:5;"><img src="2.png" alt="College Memories"></span>
+            <span style="--i:6;"><img src="1.png" alt="College Memories"></span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
